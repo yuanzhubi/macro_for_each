@@ -5,7 +5,7 @@
 #define CO_EMPTY_EXPAND(x)
 #define CO_COMMA_GEN(...) ,
 
-//We add a "ignored_data" because visual C++ compiler can not "perfect forward" empty __VA_ARGS__.
+//We add an "ignored_data" because visual C++ compiler can not "perfect forward" empty __VA_ARGS__ when we use CO_GET_NTH_ARG.
 #define CO_FE_0(...) 
 #define CO_FE_1(op_sep, sep, op_data, ignored_data, x, ...) op_data(x) 
 #define CO_FE_2(op_sep, sep, op_data, ignored_data, x, ...) op_data(x) op_sep(sep) CO_EXPAND(CO_FE_1(op_sep, sep, op_data, ignored_data, ##__VA_ARGS__))
